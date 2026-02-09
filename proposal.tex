@@ -1,39 +1,64 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
+\usepackage{graphicx} 
 \usepackage{csquotes}
 \usepackage[style=apa]{biblatex}
 \addbibresource{references.bib}
 
 \begin{document}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{4cm}
+{\Huge\bfseries Piecewise Functions in Modelling Pricing
+Structures\par}
+\vspace{1.5cm}
+{\large Natalie Hart-Hawco\par}
+\vspace{0.5cm}
+{\large February 2026\par}
+\end{center}
 
+
+\thispagestyle{empty} 
+\newpage
+\tableofcontents
+\thispagestyle{empty} 
+\newpage
 
 \section{Introduction}
-In economics, pricing strategies often involve discontinuous behaviour. Shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
-\textcite{K2017}. Pricing systems cannot always be accurately measured using continuous functions, as prices can change quickly. Piecewise functions can represent real-world price changes because of the flexibility in their operation. 
+In economics, pricing strategies often involve irregular and discontinuous behaviour. As primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
+\textcite{K2017}. Pricing systems cannot always be accurately modelled by continuous functions, as Radic (2024) explains,
+\enquote{\textit{Nonlinear pricing is a pricing scheme in which the calculated average price of a unit is a nonlinear function of demand. Typically, it decreases as demand increases.}}
+\textcite{radic2024}. Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
 
-Piecewise functions appear in first-year calculus courses, where their practicality isn't emphasized. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing and analyze mathematical consequences of the models. Understanding these effects could provide insight on the practical applications in economics and business, as real markets depend on jumps in prices.
+Piecewise functions appear frequently in first-year calculus courses, where their practicality is often understated. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing strategies and analyzing the mathematical consequences of said models. Understanding these effects could provide valuable insight into practical applications in economics and business, as real markets depend on threshold-based pricing.
+
 
 
 \section{Research Question}
 The primary question this project aims to solve is:
 
-\textbf{How do piecewise-functions influence behaviour in pricing models, and how can mathematical principles be applied?}
+\textbf{How can piecewise-functions influence behaviour in pricing models, and how can mathematical principles be applied?}
 
 Secondary questions include:
 
 \begin{itemize}
-    \item{What prices are represented by piecewise functions?}
+    \item{What pricing systems are represented by piecewise functions?}
     \item{How do continuity and differentiability affect piecewise functions?}
     \item{What advantages and limitations are provided by the functions?}
 \end{itemize}
 
 \section{Methodology}
-    
-This project will focus on the continuity and differentiability at boundary points of piecewise functions as well as analytical tools from calculus in order to investigate how changes in pricing rules affect the shape and behaviour of a function.  
+     
+This project will examine the continuity and differentiability at boundary
+points of piecewise functions, utilizing calculus tools in order to investigate how changes in pricing rules affect the shape and behaviour of a function.
 
-This project will show pricing structures using piecewise functions, providing a real-world application to economics. Python will also be used to show visuals and compare different pricing, helping to show how small changes in input variables can affect costs as \enquote{\textit{The underlying approximation problems for these models are cast in a recursive form that can often be efficiently solved with dynamic programming strategies.}} \textcite{Ajou2015}. Making Python a good approach. 
+This project will demonstrate pricing structures through the mathematical principles of piecewise functions, providing a real-world application to economics. In addition, Python will be used to visualize and compare different pricing strategies, helping to show how small changes in input variables can affect costs. 
+ 
 
 \section{Conclusion}
 
-This project will showcase how piecewise functions can be an effective way to model real-world pricing systems with different costs. Applying mathematical properties and showcasing real-world functions, the study aims to research the practical implications of piecewise pricing models.
+This project is expected to showcase how piecewise functions can be an effective way to model real-world pricing systems with layered costs. Drawing on mathematical properties and examining real-world functions, the proposed study aims to explore the practical implications of piecewise pricing models.
+
+\newpage
+\printbibliography
 
 \end{document}
