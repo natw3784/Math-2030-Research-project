@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{graphicx} 
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage[style=apa]{biblatex}
+\addbibresource{biblio.bib}
+\title{Research paper}
+\author{Natalie Hart-Hawco}
+\date{February 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In economics, pricing strategies often involve irregular and discontinuous behaviour. As primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
+\textcite{K2017}. Pricing systems cannot always be accurately modelled by continuous functions, as Radic (2024) explains,
+\enquote{\textit{Nonlinear pricing is a pricing scheme in which the calculated average price of a unit is a nonlinear function of demand. Typically, it decreases as demand increases.}}
+\textcite{radic2024}. Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
+
+Piecewise functions appear frequently in first-year calculus courses, where their practicality is often understated. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing strategies and analyzing the mathematical consequences of said models. Understanding these effects could provide valuable insight into practical applications in economics and business, as real markets depend on threshold-based pricing.
+
+\section{Mathematical Framework}
+Piecewise-defined functions are functions whose definitions depend on the value of the input variable \textcite{Stewart2021}. A piecewise function is written as:
+\begin{equation*}
+f(x) =
+\begin{cases}
+f_1(x), & x \in D_1, \\
+f_2(x), & x \in D_2, \\
+\vdots  & \vdots \\
+f_n(x), & x \in D_n.
+\end{cases}
+\end{equation*}
+
+In pricing models, the $x$ will represent the quantity of goods purchased, how many are used, and income. The $f(x)$ will show the total cost paid. 
+
+\subsection{Threshold-Based Pricing}
+Looking at continuity at boundary points in mathematical pricing models illustrates a key principle. Defining a price function by:
+\begin{equation*}
+f(x) =
+\begin{cases}
+ax, & 0 \le x \le c, \\
+bx + d, & x > c,
+\end{cases}
+\quad a,b,c,d > 0
+\end{equation*}
+
+Continuity at $x = c$ requires
+\begin{equation*}
+\lim_{x \to c^-} f(x) = \lim_{x \to c^+} f(x),
+\end{equation*}
+which implies
+\begin{equation*}
+ac = bc + d.
+\end{equation*}
+
+Showcases how there is no sudden "bump" in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
+
+\subsection{Differentiability and Marginal Cost}
+
+
+\end{document}
