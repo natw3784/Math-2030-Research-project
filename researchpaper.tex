@@ -1,5 +1,7 @@
 \documentclass{article}
+\usepackage{listings}
 \usepackage{graphicx} 
+\usepackage{appendix}
 \usepackage{csquotes}
 \usepackage{amsmath}
 \usepackage[style=apa]{biblatex}
@@ -57,6 +59,111 @@ ac = bc + d.
 Showcases how there is no sudden "bump" in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
 
 \subsection{Differentiability and Marginal Cost}
+Continuity will show smooth transitions, while differentiability illustrates marginal price change. If the derivatives on the left and right sides at the boundary point are unequal, the marginal price will abruptly change. 
+\[
+\lim_{x \to c^-} f'(x) \neq \lim_{x \to c^+} f'(x)
+\]
+
+This non-differentiability can be common in real-world pricing and reflects slight changes in pricing rules, seen in bulk discounts and shipping fees. Following \textcite{radic2024}, nonlinear pricing schedules are designed to modify demand elasticity and purchasing incentives.
+
+\subsection{Economic Relation}
+Piecewise functions can therefore provide a mathematical framework for analyzing pricing strategies. These functions can show how pricing rules change across intervals and how they affect consumers' purchasing decisions. By examining the continuity and differentiability, we can evaluate whether a pricing system encourages smooth consumption growth or creates artificial barriers at pricing thresholds.
+
+\section{Piecewise Pricing Model}
+
+To reflect a common bulk discount structure, let $x \ge 0$ represent the quantity purchased, and let the total cost function be
+$f \colon [0,\infty) \to \mathbb{R}$. represented by
+\[
+f(x) =
+\begin{cases}
+10x, & 0 \le x \le 10, \\
+8x + 20, & x > 10.
+\end{cases}
+\]
+\subsection{Continuity}
+To verify the continuity at $x=10$, we must evaluate the left and right hand side limits. 
+\[
+\lim_{x \to 10^-} f(x) = 10(10) = 100
+\]
+and
+\[
+\lim_{x \to 10^+} f(x) = 8(10) + 20 = 100.
+\]
+
+Because both sides are equal, the function is continuous at $x=10$. This continuity ensures that consumers do not experience a sudden price jump when increasing consumption slightly across the threshold. As discussed by \textcite{K2017}, continuity is usually intentionally preserved in nonlinear pricing schemes to avoid discouraging additional purchases.
+
+\subsection{Differentiability and Marginal Pricing}
+Although the function is continuous at $x$=10, it is not differentiable as 
+\[
+f'(x) =
+\begin{cases}
+10, & 0 < x < 10, \\
+8,  & x > 10.
+\end{cases}
+\]
+The left-hand derivative at $x=10$ equals $10$, while the right-hand derivative equals $8$. Since these values are unequal, $f'(10)$ does not exist.
+
+This non-differentiability highlights a kink in the graph of the function. It also represents a discrete reduction in the marginal price once the bulk threshold is exceeded economically. These kinks are a part of nonlinear pricing mechanisms and are frequently used to influence purchasing incentives by rewarding higher consumption levels \textcite{radic2024}.
+
+\subsection{Interpretation}
 
 
+\section{Graphical Analysis}
+To illustrate the behaviour of piecewise pricing, we can showcase the total and marginal costs as quantity functions. Using the same pricing model: 
+$f \colon [0,\infty) \to \mathbb{R}$. represented by
+\[
+f(x) =
+\begin{cases}
+10x, & 0 \le x \le 10, \\
+8x + 20, & x > 10.
+\end{cases}
+\]
+\subsection{Visualization}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figure_1.png}
+    \caption{Piecewise pricing function showing total cost as a function of quantity}
+    \label{fig:pricing-graph}
+\end{figure}
+
+\subsection{Interpretation of Graph}
+In the graph, the left subplot shows $f(x)$ increasing linearly until $x=10$ where a kink appears due to the change in marginal cost, visible in the change in slope from 10 to 8. This reflects the non-differentiability at the threshold, as predicted mathematically. The graphical method clearly demonstrates the impact of piecewise systems on consumer behaviour as it showcases how purchasing slightly more than 10 units is cheaper per unit, providing an incentive for consumers to cross the threshold.
+
+\subsection{Significance}
+
+
+
+
+\appendix
+\section{Python Code for Figure 1}
+\label{app:python-code}
+
+\begin{lstlisting}[caption={Python Code for Piecewise Pricing Function}, label={lst:pricing-code}]
+import matplotlib.pyplot as plt
+
+# Create x-values
+x1 = [x for x in range(0, 11)]
+x2 = [x for x in range(10, 21)]
+
+# Define the function 
+f1 = [10*x for x in x1]
+f2 = [8*x + 20 for x in x2]
+
+# Plot the function
+plt.figure()
+plt.plot(x1, f1, label=r"$f(x)=10x$")
+plt.plot(x2, f2, label=r"$f(x)=8x+20$")
+
+# Mark the breakpoint
+plt.scatter([10], [100])
+plt.axvline(10, linestyle='--')
+
+plt.xlabel("Quantity")
+plt.ylabel("Total cost")
+plt.title("Piecewise Pricing Function")
+plt.legend()
+plt.grid(True)
+
+plt.show()
+\end{lstlisting}
 \end{document}
