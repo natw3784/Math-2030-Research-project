@@ -6,13 +6,26 @@
 \usepackage{amsmath}
 \usepackage[style=apa]{biblatex}
 \addbibresource{biblio.bib}
-\title{Research paper}
-\author{Natalie Hart-Hawco}
-\date{February 2026}
-
 \begin{document}
+\thispagestyle{empty}
+\begin{center}
+\vspace*{4cm}
+{\Huge\bfseries Piecewise Functions in Modelling Pricing
+Structures\par}
+\vspace{1.5cm}
+{\large Natalie Hart-Hawco\par}
+\vspace{0.5cm}
+{\large February 2026\par}
+\end{center}
 
-\maketitle
+
+\thispagestyle{empty} 
+\newpage
+\tableofcontents
+\thispagestyle{empty} 
+\newpage
+
+
 
 \section{Introduction}
 In economics, pricing strategies often involve irregular and discontinuous behaviour. As primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
@@ -130,10 +143,43 @@ f(x) =
 In the graph, the left subplot shows $f(x)$ increasing linearly until $x=10$ where a kink appears due to the change in marginal cost, visible in the change in slope from 10 to 8. This reflects the non-differentiability at the threshold, as predicted mathematically. The graphical method clearly demonstrates the impact of piecewise systems on consumer behaviour as it showcases how purchasing slightly more than 10 units is cheaper per unit, providing an incentive for consumers to cross the threshold.
 
 \subsection{Significance}
+Graphs help to visualize the mathematical concepts applied in piecewise functions. This method can also be applied to more complex pricing models, including multiple thresholds, nonlinear segments, or discounted health costs.
+
+\section{Multiple Thresholds and Layered Pricing Models}
+The pricing model already illustrated focused on a single consumption threshold, which shows local changes in marginal cost and consumer incentives. However, pricing systems can incorporate more than one pricing threshold. For example, mobile data plans, tax brackets, and subscription services, all apply different pricing rules across multiple consumption ranges. As mentioned by \textcite{K2017}, layered pricing structures are a feature of nonlinear pricing strategies, designed to segment consumers based on demand intensity.
+
+\subsection{Multi-Threshold Pricing}
+Let $x \ge 0$ be the quantity consumed, and define the total cost function as
+\[
+f \colon [0,\infty) \to \mathbb{R}
+\]
+\[
+f(x) =
+\begin{cases}
+a_1 x, & 0 \le x \le c_1, \\
+a_2 x + d_1, & c_1 < x \le c_2, \\
+a_3 x + d_2, & x > c_2,
+\end{cases}
+\qquad a_i,\, c_i,\, d_i > 0.
+\]
+This formulation models a pricing scheme with \textbf{two} consumption thresholds at
+\( x = c_1 \) and \( x = c_2 \). These tiered pricing systems are popular in markets where firms attempt to balance revenue extraction with incentives for increased usage \textcite{radic2024}. Continuity of the total cost function requires that
+
+\subsection{Continuity Across Multiple Thresholds}
+In layered pricing systems, continuity prevents sudden price jumps at the thresholds. A multi-threshold model requires continuity to hold at both \( x = c_1 \) and \( x = c_2 \) at the same time. Therefore, the conditions
+\[
+a_1 c_1 = a_2 c_1 + d_1
+\quad \text{and} \quad
+a_2 c_2 + d_1 = a_3 c_2 + d_2.
+\]
+must be met to ensure no sudden jumps in prices as consumption crosses each threshold. The intervals define linear segments, resulting in a piecewise-linear function with multiple kinks. As shown in \textcite{K2017}, continuity is often enforced in nonlinear pricing schemes to maintain consumer trust and avoid discouraging marginal increases in demand.
 
 
 
 
+\newpage
+\printbibliography
+\newpage
 \appendix
 \section{Python Code for Figure 1}
 \label{app:python-code}
