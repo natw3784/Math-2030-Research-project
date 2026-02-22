@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{listings}
+\usepackage{float}
 \usepackage{graphicx} 
 \usepackage{appendix}
 \usepackage{csquotes}
@@ -26,6 +27,10 @@ Structures\par}
 \newpage
 
 
+\section{Abstract}
+This paper analyzes threshold-based pricing schemes using piecewise-defined
+functions. In this paper, continuity and differentiability conditions are explored at the consumption thresholds to demonstrate when total cost functions have smooth transitions or kinks. First, a single-threshold pricing model is examined to prove the relationship between continuity and the absence of price jumps, while non-differentiability corresponds to changes in marginal cost. Then, multi-threshold pricing structures are analyzed, illustrating how layered pricing rules can be constructed while continuity holds across multiple boundaries. Graphical representations are then used to compare the threshold models and to visualize kinks in the graphs. The results demonstrate how piecewise functions provide a mathematical framework for the incentive effects in nonlinear pricing systems.
+
 
 \section{Introduction}
 In economics, pricing strategies often involve irregular and discontinuous behaviour. As primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
@@ -34,6 +39,8 @@ In economics, pricing strategies often involve irregular and discontinuous behav
 \textcite{radic2024}. Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
 
 Piecewise functions appear frequently in first-year calculus courses, where their practicality is often understated. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing strategies and analyzing the mathematical consequences of said models. Understanding these effects could provide valuable insight into practical applications in economics and business, as real markets depend on threshold-based pricing.
+
+The existing literature shows how threshold-based and nonlinear pricing is used throughout the world to influence consumer behaviour. \textcite{K2017} discusses how firms apply pricing schedules with discrete quantity thresholds to manage demand and encourage higher consumption, relying on piecewise-defined pricing rules. While \textcite{Stewart2021} presents piecewise functions as tools to utilize in calculus, with very limited discussion on economic applications. Work by \textcite{radic2024} speaks to the importance of continuity in nonlinear pricing, highlighting that abrupt price changes can discourage marginal increases in demand. Related research on threshold avoidance by \textcite{Lehner2025} shows how when design cutoffs are poorly designed, it can change customers' decisions on consumption. This project builds on this literature by connecting the mathematical properties of piecewise functions to an economic interpretation in pricing models. 
 
 \section{Mathematical Framework}
 Piecewise-defined functions are functions whose definitions depend on the value of the input variable \textcite{Stewart2021}. A piecewise function is written as:
@@ -132,7 +139,8 @@ f(x) =
 \end{cases}
 \]
 \subsection{Visualization}
-\begin{figure}
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{Figure_1.png}
     \caption{Piecewise pricing function showing total cost as a function of quantity}
@@ -174,8 +182,24 @@ a_2 c_2 + d_1 = a_3 c_2 + d_2.
 \]
 must be met to ensure no sudden jumps in prices as consumption crosses each threshold. The intervals define linear segments, resulting in a piecewise-linear function with multiple kinks. As shown in \textcite{K2017}, continuity is often enforced in nonlinear pricing schemes to maintain consumer trust and avoid discouraging marginal increases in demand.
 
+\subsection{Comparison with Single-Threshold Models}
+The layered pricing structures offer more flexibility in shaping consumer behaviour but come with their own design constraints. Each threshold requires continuity conditions be satisfied, and every change in marginal cost affects purchasing incentives differently. While single-threshold models are localized in their pricing effects, multi-threshold models give a more realistic representation of pricing strategies used in the real world.
 
+This demonstrates how following the mathematical principles of continuity and differentiability, piecewise functions can interpret more complex pricing systems. By utilizing multiple thresholds, this analysis demonstrates the usefulness of piecewise functions as a tool for economic behaviour. 
 
+\subsection{Graphical Comparison}
+To illustrate the effect of multiple thresholds, we can expand the Python example in Figure 1 by plotting the total cost function $f(x)$ with thresholds at \( x = c_1 \) and \( x = c_2 \) alongside the single-threshold function. 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figure_2.png}
+    \caption{Single-Thresholds Vs. Multiple-Thresholds}
+    \label{fig:pricing-model2}
+\end{figure}
+
+Comparing these graphs visually illustrates that layered pricing shows extra regions of reduced marginal cost, creating a subtle increase in incentives for consumption. This visualization links the mathematical properties of continuity and differentiability with the economic interpretation of tiered pricing \textcite{radic2024}.
+
+This comparison allows us to see not only where price kinks occur but also how multiple thresholds could shift consumer behaviour, providing a better picture than the single-threshold model.
 
 \newpage
 \printbibliography
@@ -212,4 +236,57 @@ plt.grid(True)
 
 plt.show()
 \end{lstlisting}
+
+\begin{lstlisting}[caption={Single-Thresholds Vs. Multiple-Thresholds}, label={lst:pricing-code2}]
+import matplotlib.pyplot as plt
+
+# Single-threshold
+x1 = [x for x in range(0, 11)]
+x2 = [x for x in range(10, 21)]
+
+f1 = [10*x for x in x1]
+f2 = [8*x + 20 for x in x2]
+
+# Multi-threshold
+x3 = [x for x in range(0, 11)]
+x4 = [x for x in range(10, 21)]
+x5 = [x for x in range(20, 31)]
+
+g1 = [10*x for x in x3]
+g2 = [8*x + 20 for x in x4]
+g3 = [6*x + 40 for x in x5]
+
+# Plot
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+axes[0].plot(x1, f1, label=r"$f(x)=10x$")
+axes[0].plot(x2, f2, label=r"$f(x)=8x+20$")
+axes[0].scatter([10], [100])
+axes[0].axvline(10, linestyle='--')
+
+axes[0].set_title("Single-Threshold Pricing")
+axes[0].set_xlabel("Quantity")
+axes[0].set_ylabel("Total Cost")
+axes[0].legend()
+axes[0].grid(True)
+
+axes[1].plot(x3, g1, label=r"$f(x)=10x$")
+axes[1].plot(x4, g2, label=r"$f(x)=8x+20$")
+axes[1].plot(x5, g3, label=r"$f(x)=6x+40$")
+axes[1].scatter([10, 20], [100, 160])
+axes[1].axvline(10, linestyle='--')
+axes[1].axvline(20, linestyle='--')
+
+axes[1].set_title("Multi-Threshold Pricing")
+axes[1].set_xlabel("Quantity")
+axes[1].set_ylabel("Total Cost")
+axes[1].legend()
+axes[1].grid(True)
+
+plt.tight_layout()
+plt.show()
+
+\end{lstlisting}
+
+
 \end{document}
