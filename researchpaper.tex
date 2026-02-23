@@ -76,7 +76,7 @@ which implies
 ac = bc + d.
 \end{equation*}
 
-Showcases how there is no sudden "bump" in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
+Showcases how there is no sudden 'bump' in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
 
 \subsection{Differentiability and Marginal Cost}
 Continuity will show smooth transitions, while differentiability illustrates marginal price change. If the derivatives on the left and right sides at the boundary point are unequal, the marginal price will abruptly change. 
@@ -123,10 +123,7 @@ f'(x) =
 \]
 The left-hand derivative at $x=10$ equals $10$, while the right-hand derivative equals $8$. Since these values are unequal, $f'(10)$ does not exist.
 
-This non-differentiability highlights a kink in the graph of the function. It also represents a discrete reduction in the marginal price once the bulk threshold is exceeded economically. These kinks are a part of nonlinear pricing mechanisms and are frequently used to influence purchasing incentives by rewarding higher consumption levels \textcite{radic2024}.
-
-\subsection{Interpretation}
-
+This non-differentiability highlights a kink in the graph of the function. It also represents a discrete reduction in the marginal price once the bulk threshold is exceeded economically. These kinks are a part of nonlinear pricing mechanisms and are frequently used to influence purchasing incentives by rewarding higher consumption levels \textcite{radic2024}. 
 
 \section{Graphical Analysis}
 To illustrate the behaviour of piecewise pricing, we can showcase the total and marginal costs as quantity functions. Using the same pricing model: 
@@ -148,7 +145,7 @@ f(x) =
 \end{figure}
 
 \subsection{Interpretation of Graph}
-In the graph, the left subplot shows $f(x)$ increasing linearly until $x=10$ where a kink appears due to the change in marginal cost, visible in the change in slope from 10 to 8. This reflects the non-differentiability at the threshold, as predicted mathematically. The graphical method clearly demonstrates the impact of piecewise systems on consumer behaviour as it showcases how purchasing slightly more than 10 units is cheaper per unit, providing an incentive for consumers to cross the threshold.
+In the graph, the left subplot shows $f(x)$ increasing linearly until $x=10$ where a kink appears due to the change in marginal cost, visible in the change in slope from 10 to 8. This reflects the non-differentiability at the threshold, as predicted mathematically. The graphical method clearly demonstrates the impact of piecewise systems on consumer behaviour as it showcases how purchasing slightly more than 10 units is cheaper per unit, providing an incentive for consumers to cross the threshold. Highlighting how the visual kink illustrates how firms can preserve total-cost continuity while slightly altering marginal prices to encourage higher consumption.
 
 \subsection{Significance}
 Graphs help to visualize the mathematical concepts applied in piecewise functions. This method can also be applied to more complex pricing models, including multiple thresholds, nonlinear segments, or discounted health costs.
@@ -193,7 +190,7 @@ To illustrate the effect of multiple thresholds, we can expand the Python exampl
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\linewidth]{Figure_2.png}
-    \caption{Single-Thresholds Vs. Multiple-Thresholds}
+    \caption{Single-Threshold Vs. Multiple-Thresholds}
     \label{fig:pricing-model2}
 \end{figure}
 
@@ -201,6 +198,10 @@ Comparing these graphs visually illustrates that layered pricing shows extra reg
 
 This comparison allows us to see not only where price kinks occur but also how multiple thresholds could shift consumer behaviour, providing a better picture than the single-threshold model.
 
+\section{Conclusion}
+This report examines how piecewise functions can be used to model real-world price systems with consumption thresholds. By analyzing continuity and differentiability, the mathematical framework defines how pricing rules within the function translate to economic consumption relations by changes in marginal cost at threshold points. While the single-threshold model illustrated how continuity can be preserved while allowing discrete reductions in marginal price, the multi-threshold model demonstrated how layered pricing structures can further separate consumer behaviour. 
+
+The graphical analysis reinforced the findings by visualizing the price kinks and marginal changes in cost, making the economic applications of the model more transparent. Overall, this project shows how piecewise functions can provide a flexible and mathematically rigorous tool used to represent real-world pricing systems. Future work could extend these models to nonlinear segments or dynamic pricing to further examine how pricing thresholds can affect consumer behaviour. 
 \newpage
 \printbibliography
 \newpage
@@ -237,7 +238,7 @@ plt.grid(True)
 plt.show()
 \end{lstlisting}
 
-\begin{lstlisting}[caption={Single-Thresholds Vs. Multiple-Thresholds}, label={lst:pricing-code2}]
+\begin{lstlisting}[caption={Single-Threshold Vs. Multiple-Thresholds}, label={lst:pricing-code2}]
 import matplotlib.pyplot as plt
 
 # Single-threshold
