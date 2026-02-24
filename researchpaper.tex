@@ -28,19 +28,21 @@ Structures\par}
 
 
 \section{Abstract}
-This paper analyzes threshold-based pricing schemes using piecewise-defined
-functions. In this paper, continuity and differentiability conditions are explored at the consumption thresholds to demonstrate when total cost functions have smooth transitions or kinks. First, a single-threshold pricing model is examined to prove the relationship between continuity and the absence of price jumps, while non-differentiability corresponds to changes in marginal cost. Then, multi-threshold pricing structures are analyzed, illustrating how layered pricing rules can be constructed while continuity holds across multiple boundaries. Graphical representations are then used to compare the threshold models and to visualize kinks in the graphs. The results demonstrate how piecewise functions provide a mathematical framework for the incentive effects in nonlinear pricing systems.
+This paper analyzes threshold-based pricing schemes using piecewise-defined functions. In this paper, continuity and differentiability conditions are explored at the consumption thresholds to demonstrate instances where total cost functions display smooth transitions or kinks. First, a single-threshold pricing model is examined to prove the relationship between continuity and the absence of price jumps, while non-differentiability corresponds to changes in marginal cost. Then, multi-threshold pricing structures are analyzed, illustrating how layered pricing rules can be constructed while continuity holds across multiple boundaries. Graphical representations are then used to compare the threshold models and to visualize kinks in the graphs. The results demonstrate how piecewise functions provide a mathematical framework for the incentive effects in nonlinear pricing systems.
+
 
 
 \section{Introduction}
-In economics, pricing strategies often involve irregular and discontinuous behaviour. As primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans
-\textcite{K2017}. Pricing systems cannot always be accurately modelled by continuous functions, as Radic (2024) explains,
-\enquote{\textit{Nonlinear pricing is a pricing scheme in which the calculated average price of a unit is a nonlinear function of demand. Typically, it decreases as demand increases.}}
-\textcite{radic2024}. Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
+In economics, pricing strategies often involve irregular and discontinuous behaviour, as primarily shown by bulk discounts, tax brackets, surge pricing, shipping fees, and certain subscription plans 
+\textcite{K2017}. Pricing systems cannot always be accurately modelled by continuous functions, as \textcite{radic2024} explains,
+\enquote{\textit{Nonlinear pricing is a pricing scheme in which the calculated average price of a unit is a nonlinear function of demand. Typically, it decreases as demand increases.}}. Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
 
-Piecewise functions appear frequently in first-year calculus courses, where their practicality is often understated. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing strategies and analyzing the mathematical consequences of said models. Understanding these effects could provide valuable insight into practical applications in economics and business, as real markets depend on threshold-based pricing.
+Piecewise functions are capable of representing the real-world price changes, as they offer flexibility in their operation.
+Piecewise functions appear frequently in first-year calculus courses, where their practicality is often understated. This project aims to bridge that gap by investigating how piecewise functions can be used to model pricing strategies and analyzing the mathematical consequences of said models. Understanding these effects could provide valuable insight into practical applications in economics and business, as real markets depend on threshold-based pricing. The existing literature shows how threshold-based and nonlinear pricing is used throughout the world to influence consumer behaviour. 
+\textcite{K2017} discuss how firms apply pricing schedules with discrete quantity thresholds to manage demand and encourage higher consumption, relying on piecewise-defined pricing rules. While \textcite{Stewart2021}presents piecewise functions as tools to utilize in calculus, with very limited discussion on economic ap-
+plications. Work by
+\textcite{radic2024} speaks to the importance of continuity in non-linear pricing, highlighting that abrupt price changes can discourage marginal increases in demand. Related research on threshold avoidance by \textcite{Lehner2025} shows how when design cutoffs are poorly designed, it can change customers’ decisions on consumption. This project builds on this literature by connecting the mathematical properties of piecewise functions to an economic interpretation in pricing models.
 
-The existing literature shows how threshold-based and nonlinear pricing is used throughout the world to influence consumer behaviour. \textcite{K2017} discusses how firms apply pricing schedules with discrete quantity thresholds to manage demand and encourage higher consumption, relying on piecewise-defined pricing rules. While \textcite{Stewart2021} presents piecewise functions as tools to utilize in calculus, with very limited discussion on economic applications. Work by \textcite{radic2024} speaks to the importance of continuity in nonlinear pricing, highlighting that abrupt price changes can discourage marginal increases in demand. Related research on threshold avoidance by \textcite{Lehner2025} shows how when design cutoffs are poorly designed, it can change customers' decisions on consumption. This project builds on this literature by connecting the mathematical properties of piecewise functions to an economic interpretation in pricing models. 
 
 \section{Mathematical Framework}
 Piecewise-defined functions are functions whose definitions depend on the value of the input variable \textcite{Stewart2021}. A piecewise function is written as:
@@ -54,7 +56,7 @@ f_n(x), & x \in D_n.
 \end{cases}
 \end{equation*}
 
-In pricing models, the $x$ will represent the quantity of goods purchased, how many are used, and income. The $f(x)$ will show the total cost paid. 
+In pricing models, the input $x$ will represent the quantity of goods purchased, how many are used, and income. The output $f(x)$ will show the total cost paid.
 
 \subsection{Threshold-Based Pricing}
 Looking at continuity at boundary points in mathematical pricing models illustrates a key principle. Defining a price function by:
@@ -76,7 +78,7 @@ which implies
 ac = bc + d.
 \end{equation*}
 
-Showcases how there is no sudden 'bump' in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
+Showcases how there is no sudden ’bump’ in prices when consumption surpasses $c$. Looking from an economic standpoint, discontinuities can put consumers off from increasing demand slightly past a threshold, referred to as threshold avoidance \textcite{Lehner2025}.
 
 \subsection{Differentiability and Marginal Cost}
 Continuity will show smooth transitions, while differentiability illustrates marginal price change. If the derivatives on the left and right sides at the boundary point are unequal, the marginal price will abruptly change. 
@@ -86,12 +88,13 @@ Continuity will show smooth transitions, while differentiability illustrates mar
 
 This non-differentiability can be common in real-world pricing and reflects slight changes in pricing rules, seen in bulk discounts and shipping fees. Following \textcite{radic2024}, nonlinear pricing schedules are designed to modify demand elasticity and purchasing incentives.
 
+
 \subsection{Economic Relation}
-Piecewise functions can therefore provide a mathematical framework for analyzing pricing strategies. These functions can show how pricing rules change across intervals and how they affect consumers' purchasing decisions. By examining the continuity and differentiability, we can evaluate whether a pricing system encourages smooth consumption growth or creates artificial barriers at pricing thresholds.
+Piecewise functions can therefore provide a mathematical framework for analyzing pricing strategies. These functions can show how pricing rules change across intervals and how they affect consumers’ purchasing decisions. By examining the continuity and differentiability, we can evaluate whether a pricing system encourages smooth consumption growth or creates artificial barriers at pricing thresholds.
+
 
 \section{Piecewise Pricing Model}
-
-To reflect a common bulk discount structure, let $x \ge 0$ represent the quantity purchased, and let the total cost function be
+To reflect a common bulk discount structure, let x ≥ 0 represent the quantity purchased, and let the total cost function be
 $f \colon [0,\infty) \to \mathbb{R}$. represented by
 \[
 f(x) =
@@ -113,7 +116,7 @@ and
 Because both sides are equal, the function is continuous at $x=10$. This continuity ensures that consumers do not experience a sudden price jump when increasing consumption slightly across the threshold. As discussed by \textcite{K2017}, continuity is usually intentionally preserved in nonlinear pricing schemes to avoid discouraging additional purchases.
 
 \subsection{Differentiability and Marginal Pricing}
-Although the function is continuous at $x$=10, it is not differentiable as 
+Although the function is continuous at $x=10$, it is not differentiable as 
 \[
 f'(x) =
 \begin{cases}
@@ -150,8 +153,9 @@ In the graph, the left subplot shows $f(x)$ increasing linearly until $x=10$ whe
 \subsection{Significance}
 Graphs help to visualize the mathematical concepts applied in piecewise functions. This method can also be applied to more complex pricing models, including multiple thresholds, nonlinear segments, or discounted health costs.
 
+
 \section{Multiple Thresholds and Layered Pricing Models}
-The pricing model already illustrated focused on a single consumption threshold, which shows local changes in marginal cost and consumer incentives. However, pricing systems can incorporate more than one pricing threshold. For example, mobile data plans, tax brackets, and subscription services, all apply different pricing rules across multiple consumption ranges. As mentioned by \textcite{K2017}, layered pricing structures are a feature of nonlinear pricing strategies, designed to segment consumers based on demand intensity.
+The pricing model already illustrated focused on a single consumption threshold, which shows local changes in marginal cost and consumer incentives. However, pricing systems can incorporate more than one pricing threshold. For example, mobile data plans, tax brackets, and subscription services all apply different pricing rules across multiple consumption ranges. As mentioned by \textcite{K2017}, layered pricing structures are a feature of nonlinear pricing strategies designed to segment consumers based on demand intensity.
 
 \subsection{Multi-Threshold Pricing}
 Let $x \ge 0$ be the quantity consumed, and define the total cost function as
@@ -168,7 +172,7 @@ a_3 x + d_2, & x > c_2,
 \qquad a_i,\, c_i,\, d_i > 0.
 \]
 This formulation models a pricing scheme with \textbf{two} consumption thresholds at
-\( x = c_1 \) and \( x = c_2 \). These tiered pricing systems are popular in markets where firms attempt to balance revenue extraction with incentives for increased usage \textcite{radic2024}. Continuity of the total cost function requires that
+\( x = c_1 \) and \( x = c_2 \). These tiered pricing systems are popular in markets where firms attempt to balance revenue extraction with incentives for increased usage \textcite{radic2024}. Continuity of the total cost function requires that there are no sudden jumps or gaps within the pricing model. 
 
 \subsection{Continuity Across Multiple Thresholds}
 In layered pricing systems, continuity prevents sudden price jumps at the thresholds. A multi-threshold model requires continuity to hold at both \( x = c_1 \) and \( x = c_2 \) at the same time. Therefore, the conditions
@@ -180,9 +184,9 @@ a_2 c_2 + d_1 = a_3 c_2 + d_2.
 must be met to ensure no sudden jumps in prices as consumption crosses each threshold. The intervals define linear segments, resulting in a piecewise-linear function with multiple kinks. As shown in \textcite{K2017}, continuity is often enforced in nonlinear pricing schemes to maintain consumer trust and avoid discouraging marginal increases in demand.
 
 \subsection{Comparison with Single-Threshold Models}
-The layered pricing structures offer more flexibility in shaping consumer behaviour but come with their own design constraints. Each threshold requires continuity conditions be satisfied, and every change in marginal cost affects purchasing incentives differently. While single-threshold models are localized in their pricing effects, multi-threshold models give a more realistic representation of pricing strategies used in the real world.
+The layered pricing structures offer more flexibility in shaping consumer behaviour but come with their own design constraints. Each threshold requires continuity conditions be satisfied, and every change in marginal cost affects purchasing incentives differently. While single-threshold models are localized in their pricing effects, multi-threshold models give a more realistic representation of pricing strategies used in the real world. 
 
-This demonstrates how following the mathematical principles of continuity and differentiability, piecewise functions can interpret more complex pricing systems. By utilizing multiple thresholds, this analysis demonstrates the usefulness of piecewise functions as a tool for economic behaviour. 
+This demonstrates that by following the mathematical principles of continuity and differentiability, piecewise functions can interpret more complex pricing systems. By utilizing multiple thresholds, this analysis demonstrates the usefulness of piecewise functions as a tool for economic behaviour.
 
 \subsection{Graphical Comparison}
 To illustrate the effect of multiple thresholds, we can expand the Python example in Figure 1 by plotting the total cost function $f(x)$ with thresholds at \( x = c_1 \) and \( x = c_2 \) alongside the single-threshold function. 
@@ -201,7 +205,8 @@ This comparison allows us to see not only where price kinks occur but also how m
 \section{Conclusion}
 This report examines how piecewise functions can be used to model real-world price systems with consumption thresholds. By analyzing continuity and differentiability, the mathematical framework defines how pricing rules within the function translate to economic consumption relations by changes in marginal cost at threshold points. While the single-threshold model illustrated how continuity can be preserved while allowing discrete reductions in marginal price, the multi-threshold model demonstrated how layered pricing structures can further separate consumer behaviour. 
 
-The graphical analysis reinforced the findings by visualizing the price kinks and marginal changes in cost, making the economic applications of the model more transparent. Overall, this project shows how piecewise functions can provide a flexible and mathematically rigorous tool used to represent real-world pricing systems. Future work could extend these models to nonlinear segments or dynamic pricing to further examine how pricing thresholds can affect consumer behaviour. 
+The graphical analysis reinforced the findings by visualizing the price kinks and marginal changes in cost, making the economic applications of the model more transparent. Overall, this project shows how piecewise functions can provide a flexible and mathematically rigorous tool used to represent real-world pricing systems. Future work could extend these models to nonlinear segments or dynamic pricing to further examine how pricing thresholds can affect consumer behaviour.
+
 \newpage
 \printbibliography
 \newpage
